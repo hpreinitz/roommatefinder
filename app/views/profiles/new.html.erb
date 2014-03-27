@@ -1,0 +1,48 @@
+<h1>Profile</h1>
+
+<%= form_for :profile, url: profiles_path do |f| %>
+  <p>
+    <%= f.label :firstname, 'First Name' %><br>
+    <%= f.text_field :firstname %>
+  </p>
+ 
+  <p>
+    <%= f.label :lastname, 'Last Name' %><br>
+    <%= f.text_field :lastname %>
+  </p>
+
+  <p>
+    <%= f.label :email, 'E-mail' %><br>
+    <%= f.email_field :email %>
+  </p>
+ 
+  <p>
+    <%= f.label :password, 'Password' %><br>
+    <%= f.password_field :password %>
+  </p>
+
+
+  <p>
+    <%= f.label :gender, "Male", :value => "m" %><br>
+    <%= f.radio_button :gender, "m" %>
+   </p>
+
+  <p>
+    <%= f.label :gender, "Female", :value => "f" %><br>
+    <%= f.radio_button :gender, "f" %>
+  </p>
+
+  <p>
+    <%= f.label :gender, "Transgender", :value => "t" %><br>
+    <%= f.radio_button :gender, "t" %>
+   </p>
+   
+  <p>
+    <%= f.label :gender, "Not Specified", :value => "n" %><br>
+    <%= f.radio_button :gender, "n" %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
