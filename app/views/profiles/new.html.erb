@@ -21,6 +21,31 @@
     <%= f.password_field :password %>
   </p>
 
+ <p>
+    <%= f.label :bio, 'Biography' %><br>
+    <%= f.text_field :bio %>
+  </p>
+
+   <p>
+    <%= f.label :birthdate, 'Birth Date' %><br>
+    <%= f.date_field :birthdate %>
+
+  </p>
+
+   <p>
+    <%= f.label :interests, 'Interests' %><br>
+    <%= f.text_field :interests %>
+  </p>
+
+<p>
+    <%= f.label :petsok1, "Pets OK?", :value => "n" %><br>
+    <%= f.radio_button :petsok1, "y" %>
+   </p>
+
+    <div class="field">
+        <%= f.label :petsok, "Pets OK?" %> <br />
+        <%= f.check_box :petsok, {}, true, false %> <br />
+    </div>
 
   <p>
     <%= f.label :gender, "Male", :value => "m" %><br>
