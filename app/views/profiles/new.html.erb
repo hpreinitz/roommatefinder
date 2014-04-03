@@ -1,4 +1,9 @@
-<h1>Profile</h1>
+
+<%= render 'layouts/header' %>
+
+<div class="container">
+
+<h2>Profile</h2>
 <p>Find me in app/views/profiles/new.html.erb</p>
 
 <%= form_for :profile, url: profiles_path do |f| %>
@@ -73,5 +78,5 @@
   </p>
 <% end %>
 
-<h1>Home</h1>
-<%= link_to "Home", controller: "welcome" %>
+</div>
+<%= render 'layouts/footer' %>
