@@ -6,8 +6,21 @@
 <h2>Profile</h2>
 <p>Find me in app/views/profiles/new.html.erb</p>
 
+</div>
+
 <%= form_for :profile, url: profiles_path do |f| %>
-  <p>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Tab 1</a></li>
+    <li><a href="#tabs-2">Tab 2</a></li>
+    <li><a href="#tabs-3">Tab 3</a></li>
+  </ul>
+
+
+  <div id="tabs-1">
+    <h2>Content heading 1</h2>
+    <p>
     <%= f.label :firstname, 'First Name' %><br>
     <%= f.text_field :firstname %>
   </p>
@@ -26,34 +39,19 @@
     <%= f.label :password, 'Password' %><br>
     <%= f.password_field :password %>
   </p>
+  </div>
 
- <p>
-    <%= f.label :bio, 'Biography' %><br>
-    <%= f.text_field :bio %>
-  </p>
+  <div id="tabs-2">
+    <h2>Content heading 2</h2>
 
-   <p>
-    <%= f.label :birthdate, 'Birth Date' %><br>
-    <%= f.date_field :birthdate %>
-
-  </p>
-
-   <p>
-    <%= f.label :interests, 'Interests' %><br>
-    <%= f.text_field :interests %>
-  </p>
-
-<p>
-    <%= f.label :petsok1, "Pets OK?", :value => "n" %><br>
-    <%= f.radio_button :petsok1, "y" %>
-   </p>
-
-    <div class="field">
-        <%= f.label :petsok, "Pets OK?" %> <br />
-        <%= f.check_box :petsok, {}, true, false %> <br />
-    </div>
+    <img src="smiley.gif" alt="Smiley face" height="42" width="42">
 
   <p>
+    <%= f.label :birthdate, 'Birth Date' %><br>
+    <%= f.date_field :birthdate %>
+  </p>
+
+    <p>
     <%= f.label :gender, "Male", :value => "m" %><br>
     <%= f.radio_button :gender, "m" %>
    </p>
@@ -74,9 +72,37 @@
   </p>
 
   <p>
+    <%= f.label :bio, 'Biography' %><br>
+    <%= f.text_field :bio %>
+  </p>
+
+   <p>
+    <%= f.label :interests, 'Interests' %><br>
+    <%= f.text_field :interests %>
+  </p>
+
+  </div>
+  <div id="tabs-3">
+    <h2>Content heading 3</h2>
+
+   <div id="slider"></div> 
+   
+  </div>
+</div>  
+
+  <p>
     <%= f.submit %>
   </p>
+
 <% end %>
 
+
+<p>Date: <input type="text" id="datepicker"></p>
+
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
 </div>
+
 <%= render 'layouts/footer' %>
+
