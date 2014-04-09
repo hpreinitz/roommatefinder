@@ -10,6 +10,18 @@
 
 <%= form_for :profile, url: profiles_path do |f| %>
 
+<% if @profile.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@profile.errors.count, "error") %> prohibited
+      this Profile from being saved:</h2>
+    <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
 <div id="tabs">
   <ul>
     <li><a href="#tabs-1">Tab 1</a></li>
