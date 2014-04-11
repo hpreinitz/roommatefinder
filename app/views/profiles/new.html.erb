@@ -51,6 +51,11 @@
     <%= f.label :password, 'Password' %><br>
     <%= f.password_field :password %>
   </p>
+
+  <p>
+    <%= f.label :password_confirmation, 'Confirmation' %><br>
+    <%= f.password_field :password_confirmation %>
+  </p>
   </div>
 
   <div id="tabs-2">
@@ -63,7 +68,9 @@
     <%= f.date_field :birthdate %>
   </p>
 
-    <p>
+  <p>Birth Date: <input type="text" id="datepicker"></p>
+
+  <p>
     <%= f.label :gender, "Male", :value => "m" %><br>
     <%= f.radio_button :gender, "m" %>
    </p>
@@ -82,7 +89,6 @@
     <%= f.label :gender, "Not Specified", :value => "n" %><br>
     <%= f.radio_button :gender, "n" %>
   </p>
-
   <p>
     <%= f.label :bio, 'Biography' %><br>
     <%= f.text_field :bio %>
@@ -94,10 +100,46 @@
   </p>
 
   </div>
+
   <div id="tabs-3">
     <h2>Content heading 3</h2>
 
+ <div class="ui-widget">
+   <label for="tags">Location </label>
+   <input id="tags">
+ </div>
+
+ <div class="ui-widget">
+   <label for="tags">Employer </label>
+   <input id="tags">
+ </div>
+
    <div id="slider"></div> 
+
+  <p>
+    <%= f.label :gender, "Pets OK?", :value => "n" %><br>
+    <%= f.radio_button :gender, "n" %>
+   </p>
+
+   <p>
+    <%= f.label :gender, "Male", :value => "m" %><br>
+    <%= f.radio_button :gender, "m" %>
+   </p>
+
+  <p>
+    <%= f.label :gender, "Female", :value => "f" %><br>
+    <%= f.radio_button :gender, "f" %>
+  </p>
+
+  <p>
+    <%= f.label :gender, "Transgender", :value => "t" %><br>
+    <%= f.radio_button :gender, "t" %>
+   </p>
+   
+  <p>
+    <%= f.label :gender, "Not Specified", :value => "n" %><br>
+    <%= f.radio_button :gender, "n" %>
+  </p>
    
   </div>
 </div>  
@@ -108,13 +150,6 @@
 
 <% end %>
 
-
-<p>Date: <input type="text" id="datepicker"></p>
-
-<div class="ui-widget">
-  <label for="tags">Tags: </label>
-  <input id="tags">
-</div>
 
 <%= render 'layouts/footer' %>
 

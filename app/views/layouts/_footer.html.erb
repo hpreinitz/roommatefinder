@@ -3,12 +3,11 @@
   <small>
     &copy; Copyright 2014 
   </small>
-  <nav>
-    <ul> 
-       <li><%= link_to "Home", root_path %></li>
-       <li><%= link_to 'New Profile', new_profile_path %></li>
-       <li><%= link_to "Candidate", 'new_candidate_path' %></li>
-       <li><%= link_to "Message", 'new_message_path' %></li>
-    </ul>
-  </nav>
+
+ <nav>
+   <ul>
+     <%= render 'layouts/nav' %>
+   </ul>
+ </nav>
+
 </footer>

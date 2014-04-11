@@ -1,7 +1,15 @@
 
-
 <%= render 'layouts/header' %>
-<h1>Listing Profiles</h1>
+<h1>Listing Candidates</h1>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Candidates</a></li>
+    <li><a href="#tabs-2">Messages</a></li>
+
+  </ul>
+
+  <div id="tabs-1">
 
 <table>
   <thead>
@@ -28,15 +36,20 @@
         <td><%= profile.bio %></td>
         <td><%= profile.interests %></td>
         <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+    
+  </div>
 
+  <div id="tabs-2">
+
+  <h3> Messages tab </h3>
+    
+  </div>
+
+</div>
 <br>
-
-<%= link_to 'New Profile', new_profile_path %>
 
 <%= render 'layouts/footer' %>
