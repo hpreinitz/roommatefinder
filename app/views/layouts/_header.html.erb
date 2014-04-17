@@ -3,11 +3,10 @@
     <div class="container">    
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to 'Profile', new_profile_path %></li>
-          <li><%= link_to "Candidate", candidates_path %></li>
-          <li><%= link_to "Message", candidates_path %></li>
-        </ul>
+
+         <%= render 'layouts/nav' %>
+
+       </ul>
       </nav>
     </div>
   </div>

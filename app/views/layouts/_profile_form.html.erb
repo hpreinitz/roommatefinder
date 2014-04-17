@@ -86,12 +86,50 @@
   </p>
 
   </div>
+
   <div id="tabs-3">
     <h2>Content heading 3</h2>
 
-   <div id="slider"></div> 
+ <div class="ui-widget">
+   <label for="tags">Location </label>
+   <input id="tags">
+ </div>
+
+ <div class="ui-widget">
+   <label for="tags">Employer </label>
+   <input id="tags">
+ </div>
+
+ <div id="slider"></div> 
+
+ <div class="field">
+        <%= f.label :petsok, "Pets OK?" %> <br />
+        <%= f.check_box :petsok, {}, true, false %> <br />
+ </div>
+  
+ <div class="field">
+        <%= f.label :gendermaleok, "Male OK?" %> <br />
+        <%= f.check_box :gendermaleok, {}, true, false %> <br />
+  </div>
+
+  <div class="field">
+        <%= f.label :genderfemaleok, "Female OK?" %> <br />
+        <%= f.check_box :genderfemaleok, {}, true, false %> <br />
+  </div>
+
+  <div class="field">
+        <%= f.label :gendertransgenderok, "Transgender OK?" %> <br />
+        <%= f.check_box :gendertransgenderok, {}, true, false %> <br />
+  </div>
+
+  <div class="field">
+        <%= f.label :gendernotspecifiedok, "Not Specified OK?" %> <br />
+        <%= f.check_box :gendernotspecifiedok, {}, true, false %> <br />
+  </div>
+
    
   </div>
+   
 </div>  
 
   <p>

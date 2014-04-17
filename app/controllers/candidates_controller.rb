@@ -19,6 +19,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :gender, :interests, :email, :password, :bio, :birthdate)
+      params.require(:profile).permit(:firstname, :lastname, :gender, :interests, :email, :password, :bio, :birthdate, :petsok, :genderok)
     end
 end

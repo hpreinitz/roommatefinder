@@ -6,7 +6,7 @@
 <h2>Profile</h2>
 <p>Find me in app/views/profiles/new.html.erb</p>
 
-</div>
+
 
 <%= form_for :profile, url: profiles_path do |f| %>
 
@@ -116,30 +116,32 @@
 
    <div id="slider"></div> 
 
-  <p>
-    <%= f.label :gender, "Pets OK?", :value => "n" %><br>
-    <%= f.radio_button :gender, "n" %>
-   </p>
+  <div class="field">
+        <%= f.label :petsok, "Pets OK?" %> <br />
+        <%= f.check_box :petsok, {}, true, false %> <br />
+        
+  </div>
 
-   <p>
-    <%= f.label :gender, "Male", :value => "m" %><br>
-    <%= f.radio_button :gender, "m" %>
-   </p>
+  <div class="field">
+        <%= f.label :gendermaleok, "Male OK?" %> <br />
+        <%= f.check_box :gendermaleok, {}, true, false %> <br />
+  </div>
 
-  <p>
-    <%= f.label :gender, "Female", :value => "f" %><br>
-    <%= f.radio_button :gender, "f" %>
-  </p>
+  <div class="field">
+        <%= f.label :genderfemaleok, "Female OK?" %> <br />
+        <%= f.check_box :genderfemaleok, {}, true, false %> <br />
+  </div>
 
-  <p>
-    <%= f.label :gender, "Transgender", :value => "t" %><br>
-    <%= f.radio_button :gender, "t" %>
-   </p>
-   
-  <p>
-    <%= f.label :gender, "Not Specified", :value => "n" %><br>
-    <%= f.radio_button :gender, "n" %>
-  </p>
+  <div class="field">
+        <%= f.label :gendertransgenderok, "Transgender OK?" %> <br />
+        <%= f.check_box :gendertransgenderok, {}, true, false %> <br />
+  </div>
+
+  <div class="field">
+        <%= f.label :gendernotspecifiedok, "Not Specified OK?" %> <br />
+        <%= f.check_box :gendernotspecifiedok, {}, true, false %> <br />
+  </div>
+
    
   </div>
 </div>  
@@ -150,6 +152,6 @@
 
 <% end %>
 
-
+</div>
 <%= render 'layouts/footer' %>
 

@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
     def update
 	  set_profile
 
-    if @profile.update(params[:profile].permit(:firstname, :lastname, :email, :birthdate, :gender, :bio, :interests))
+    if @profile.update(params[:profile].permit(:firstname, :lastname, :email, :birthdate, :gender, :bio, :interests, :petsok, :genderok, :gendermaleok, :genderfemaleok, :gendertransgenderok, :gendernotspecifiedok))
       redirect_to @profile
     else
       render 'edit'
@@ -60,7 +60,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :gender, :interests, :email, :password, :bio, :birthdate)
+      params.require(:profile).permit(:firstname, :lastname, :gender, :interests, :email, :password, :bio, :birthdate, :petsok, :genderok, :gendermaleok, :genderfemaleok, :gendertransgenderok, :gendernotspecifiedok)
     end
 
 end

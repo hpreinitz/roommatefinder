@@ -22,7 +22,18 @@
 
 <p>
   <strong>Gender:</strong>
-  <%= @profile.gender %>
+  <%= case @profile.gender
+  when 'm'
+  'Male'
+when 'f'
+  'Female'
+when 't'
+  'Transgender'
+when 'n'
+  'Not Specified'
+else
+  'Error'
+end %>
 </p>
 
 <p>
@@ -35,3 +46,52 @@
   <%= @profile.interests %>
 </p>
 
+<p>
+  <strong>Pets OK?:</strong>
+  <%= if @profile.petsok 
+        'Yes'
+      else
+        'No'
+      end
+   %>
+</p>
+
+<p>
+  <strong>Male OK?:</strong>
+  <%= if @profile.gendermaleok
+        'Yes'
+      else
+        'No'
+      end
+   %>
+</p>
+
+<p>
+  <strong>Female OK?:</strong>
+  <%= if @profile.genderfemaleok 
+        'Yes'
+      else
+        'No'
+      end
+  %>
+</p>
+
+<p>
+  <strong>Transgender OK?:</strong>
+  <%= if @profile.gendertransgenderok
+        'Yes'
+      else
+        'No'
+      end
+  %>
+</p>
+
+<p>
+  <strong>Not Specified OK?:</strong>
+  <%= if @profile.gendernotspecifiedok 
+        'Yes'
+      else
+        'No'
+      end
+  %>
+</p>
