@@ -23,17 +23,21 @@
 <p>
   <strong>Gender:</strong>
   <%= case @profile.gender
-  when 'm'
-  'Male'
-when 'f'
-  'Female'
-when 't'
-  'Transgender'
-when 'n'
-  'Not Specified'
-else
-  'Error'
-end %>
+      when 'm'
+        'Male'
+      when 'f'
+        'Female'
+      when 't'
+        'Transgender'
+      when 'n'
+        'Not Specified'
+      when ''
+        'Not Specified'
+      when nil
+        'Not Specified'
+      else
+        'Error'
+      end %>
 </p>
 
 <p>
@@ -48,7 +52,7 @@ end %>
 
 <p>
   <strong>Pets OK?:</strong>
-  <%= if @profile.petsok 
+  <%= if @profile.petsok == "true"
         'Yes'
       else
         'No'
@@ -58,7 +62,7 @@ end %>
 
 <p>
   <strong>Male OK?:</strong>
-  <%= if @profile.gendermaleok
+  <%= if @profile.gendermaleok == 'true'
         'Yes'
       else
         'No'
@@ -68,7 +72,7 @@ end %>
 
 <p>
   <strong>Female OK?:</strong>
-  <%= if @profile.genderfemaleok 
+  <%= if @profile.genderfemaleok == 'true'
         'Yes'
       else
         'No'
@@ -78,7 +82,7 @@ end %>
 
 <p>
   <strong>Transgender OK?:</strong>
-  <%= if @profile.gendertransgenderok
+  <%= if @profile.gendertransgenderok == 'true'
         'Yes'
       else
         'No'
@@ -88,7 +92,7 @@ end %>
 
 <p>
   <strong>Not Specified OK?:</strong>
-  <%= if @profile.gendernotspecifiedok 
+  <%= if @profile.gendernotspecifiedok == 'true'
         'Yes'
       else
         'No'

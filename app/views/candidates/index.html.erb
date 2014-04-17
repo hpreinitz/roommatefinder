@@ -46,37 +46,41 @@
                   'Transgender'
                 when 'n'
                   'Not Specified'
+                when ''
+                  'Not Specified'
+                when nil
+                  'Not Specified'
                 else
                   'Error'
                 end         %></td>
         <td><%= profile.bio %></td>
         <td><%= profile.interests %></td>
-        <td><%= if profile.petsok 
+        <td><%= if profile.petsok == "true"
                   'Yes'
                 else
                   'No'
                 end
         %></td>
-        <td><%= if profile.gendermaleok
+        <td><%= if profile.gendermaleok == 'true'
                   'Yes'
                 else
                   'No'
                 end
 
          %></td>
-        <td><%= if profile.genderfemaleok
+        <td><%= if profile.genderfemaleok == 'true'
                   'Yes'
                 else
                   'No'
                 end          
          %></td>
-        <td><%= if profile.gendertransgenderok
+        <td><%= if profile.gendertransgenderok == 'true'
                   'Yes'
                 else
                   'No'
                 end          
          %></td>
-        <td><%= if profile.gendernotspecifiedok
+        <td><%= if profile.gendernotspecifiedok == 'true'
                   'Yes'
                 else
                   'No'
