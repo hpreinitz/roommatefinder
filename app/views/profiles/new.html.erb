@@ -6,8 +6,6 @@
 <h2>Profile</h2>
 <p>Find me in app/views/profiles/new.html.erb</p>
 
-
-
 <%= form_for :profile, url: profiles_path do |f| %>
 
 <% if @profile.errors.any? %>
@@ -29,33 +27,33 @@
     <li><a href="#tabs-3">Tab 3</a></li>
   </ul>
 
-
   <div id="tabs-1">
     <h2>Content heading 1</h2>
     <p>
-    <%= f.label :firstname, 'First Name' %><br>
-    <%= f.text_field :firstname %>
-  </p>
+      <%= f.label :firstname, 'First Name' %><br>
+      <%= f.text_field :firstname %>
+    </p>
  
-  <p>
-    <%= f.label :lastname, 'Last Name' %><br>
-    <%= f.text_field :lastname %>
-  </p>
+    <p>
+      <%= f.label :lastname, 'Last Name' %><br>
+      <%= f.text_field :lastname %>
+    </p>
 
-  <p>
-    <%= f.label :email, 'E-mail' %><br>
-    <%= f.email_field :email %>
-  </p>
- 
-  <p>
-    <%= f.label :password, 'Password' %><br>
-    <%= f.password_field :password %>
-  </p>
+    <p>
+      <%= f.label :email, 'E-mail' %><br>
+      <%= f.email_field :email %>
+    </p>
+   
+    <p>
+      <%= f.label :password, 'Password' %><br>
+      <%= f.password_field :password %>
+    </p>
 
-  <p>
-    <%= f.label :password_confirmation, 'Confirmation' %><br>
-    <%= f.password_field :password_confirmation %>
-  </p>
+    <p>
+      <%= f.label :password_confirmation, 'Confirmation' %><br>
+      <%= f.password_field :password_confirmation %>
+    </p>
+
   </div>
 
   <div id="tabs-2">
@@ -63,86 +61,84 @@
 
     <img src="smiley.gif" alt="Smiley face" height="42" width="42">
 
-  <p>
-    <%= f.label :birthdate, 'Birth Date' %><br>
-    <%= f.date_field :birthdate %>
-  </p>
+    <p>
+      <%= f.label :birthdate, 'Birth Date' %><br>
+      <%= f.date_field :birthdate %>
+    </p>
 
-  <p>Birth Date: <input type="text" id="datepicker"></p>
+    <p>Birth Date: <input type="text" id="datepicker"></p>
 
-  <p>
-    <%= f.label :gender, "Male", :value => "m" %><br>
-    <%= f.radio_button :gender, "m" %>
-   </p>
+    <p>
+      <%= f.label :gender, "Male", :value => "m" %><br>
+      <%= f.radio_button :gender, "m" %>
+    </p>
 
-  <p>
-    <%= f.label :gender, "Female", :value => "f" %><br>
-    <%= f.radio_button :gender, "f" %>
-  </p>
+    <p>
+      <%= f.label :gender, "Female", :value => "f" %><br>
+      <%= f.radio_button :gender, "f" %>
+    </p>
 
-  <p>
-    <%= f.label :gender, "Transgender", :value => "t" %><br>
-    <%= f.radio_button :gender, "t" %>
-   </p>
-   
-  <p>
-    <%= f.label :gender, "Not Specified", :value => "n" %><br>
-    <%= f.radio_button :gender, "n" %>
-  </p>
-  <p>
-    <%= f.label :bio, 'Biography' %><br>
-    <%= f.text_field :bio %>
-  </p>
+    <p>
+      <%= f.label :gender, "Transgender", :value => "t" %><br>
+      <%= f.radio_button :gender, "t" %>
+    </p>
+     
+    <p>
+      <%= f.label :gender, "Not Specified", :value => "n" %><br>
+      <%= f.radio_button :gender, "n" %>
+    </p>
 
-   <p>
-    <%= f.label :interests, 'Interests' %><br>
-    <%= f.text_field :interests %>
-  </p>
+    <p>
+      <%= f.label :bio, 'Biography' %><br>
+      <%= f.text_field :bio %>
+    </p>
+
+    <p>
+      <%= f.label :interests, 'Interests' %><br>
+      <%= f.text_field :interests %>
+    </p>  
 
   </div>
 
   <div id="tabs-3">
     <h2>Content heading 3</h2>
 
- <div class="ui-widget">
-   <label for="tags">Location </label>
-   <input id="tags">
- </div>
+     <div class="ui-widget">
+       <label for="tags">Location </label>
+       <input id="tags">
+     </div>
 
- <div class="ui-widget">
-   <label for="tags">Employer </label>
-   <input id="tags">
- </div>
+     <div class="ui-widget">
+       <label for="tags">Employer </label>
+       <input id="tags">
+     </div>
 
-   <div id="slider"></div> 
+      <div id="slider"></div> 
 
-  <div class="field">
+      <div class="field">
         <%= f.label :petsok, "Pets OK?", :value => 'false' %> <br />
-        <%= f.check_box :petsok, {}, "true", "false" %> <br />
-        
-  </div>
+        <%= f.check_box :petsok, {}, "true", "false" %> <br />   
+      </div>
 
-  <div class="field">
+      <div class="field">
         <%= f.label :gendermaleok, "Male OK?", :value => 'false' %> <br />
         <%= f.check_box :gendermaleok, {}, "true", "false" %> <br />
-  </div>
+      </div>
 
-  <div class="field">
+      <div class="field">
         <%= f.label :genderfemaleok, "Female OK?", :value => 'false' %> <br />
         <%= f.check_box :genderfemaleok, {}, "true", "false" %> <br />
-  </div>
+      </div>
 
-  <div class="field">
+      <div class="field">
         <%= f.label :gendertransgenderok, "Transgender OK?", :value => 'false' %> <br />
         <%= f.check_box :gendertransgenderok, {}, "true", "false" %> <br />
-  </div>
+      </div>
 
-  <div class="field">
+      <div class="field">
         <%= f.label :gendernotspecifiedok, "Not Specified OK?", :value => 'false' %> <br />
         <%= f.check_box :gendernotspecifiedok, {}, "true", "false" %> <br />
-  </div>
-
-   
+      </div>
   </div>
 </div>  
 
@@ -152,6 +148,9 @@
 
 <% end %>
 
+ <li><%= link_to "Photo", photos_new_path %></li>
+
 </div>
+
 <%= render 'layouts/footer' %>
 

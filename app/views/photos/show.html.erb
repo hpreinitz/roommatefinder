@@ -1,0 +1,29 @@
+<%= render 'layouts/header' %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Id</th>
+      <th>File name</th>
+      <th>Created at</th> 
+      <th>Caption</th>
+      <th>&nbsp;</th>
+     </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td><%= image_tag @photo.attachment_url, :alt => "Profile Image", :width => 150, :height => 150%></td>
+        <td><%= @photo.id %></td>
+        <td><%= File.basename(@photo.attachment.to_s) %></td>
+        <td><%= @photo.created_at %></td>
+        <td><%= @photo.caption %></td>    
+        <td><%= button_to "Delete",  @photo, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{@photo.caption}?" %></td>
+      </tr>
+   
+  </tbody>
+
+</table>
+
+<%= render 'layouts/footer' %>

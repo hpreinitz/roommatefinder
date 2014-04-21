@@ -1,0 +1,26 @@
+<%= render 'layouts/header' %>
+
+<h1>Photos#new</h1>
+<p>Find me in app/views/photos/new.html.erb</p>
+<% if !@photo.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+ 
+<div class="well">
+  <%= form_for @photo, html: { multipart: true } do |f| %>
+  <%= f.label :attachment %>
+  <%= f.file_field :attachment %>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+ 
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<%= render 'layouts/footer' %>
