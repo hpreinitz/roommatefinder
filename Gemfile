@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+#gem 'mysql2'
+
 #gem 'rmagick'
 gem 'carrierwave', '~> 0.9'
 

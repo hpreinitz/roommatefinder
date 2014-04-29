@@ -3,11 +3,11 @@
 
 <div class="container">
 
-<h2>Edit Profile</h2>
+<h2>Edit Profile -- <%= @profile.email %></h2>
 <p>Find me in app/views/profiles/edit.html.erb</p>
 
 <%= render 'layouts/profile_form' %>
-
+<%= link_to "Cancel", edit_profile_path, class: "btn btn-primary" %>
 <p>Date: <input type="text" id="datepicker"></p>
 
 <div class="ui-widget">
@@ -17,5 +17,7 @@
 
 </div>
 
+<%= link_to "Show", profile_path %>
+<%= link_to "Profiles", profiles_path %>
 <%= render 'layouts/footer' %>
 

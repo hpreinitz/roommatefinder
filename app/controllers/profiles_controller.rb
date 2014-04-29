@@ -1,27 +1,30 @@
+
+
 class ProfilesController < ApplicationController
 
-	def new
+
+  def new
       @profile = Profile.new
 	end
 
-    def show
+  def show
       set_profile
-    end
+  end
 
-   def edit
+  def edit
      @profile = Profile.find(params[:id])
-   end
+  end
 
-    def destroy
+  def destroy
       set_profile
       @profile.destroy
       respond_to do |format|
         format.html { redirect_to profiles_url }
         format.json { head :no_content }
        end
-    end
+  end
 
-    def update
+  def update
 	  set_profile
 
     if @profile.update(params[:profile].permit(:firstname, :lastname, :email, :birthdate, :gender, :bio, :interests, :petsok, :genderok, :gendermaleok, :genderfemaleok, :gendertransgenderok, :gendernotspecifiedok))
@@ -30,7 +33,7 @@ class ProfilesController < ApplicationController
       render 'edit'
     end
 
-    end
+  end
 
 	def index
       @profiles = Profile.all
@@ -40,7 +43,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
 
     respond_to do |format|
-      if @profile.save
+      if @profile.save!
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render action: 'show', status: :created, location: @profile }
       else
@@ -55,7 +58,13 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+    #  if profile_signed_in?
+    
+    #    @profile = Profile.find(current_profile)
+    #  else
+        @profile = Profile.find(params[:id])
+     # end
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -63,4 +72,7 @@ class ProfilesController < ApplicationController
       params.require(:profile).permit(:firstname, :lastname, :gender, :interests, :email, :password, :bio, :birthdate, :petsok, :genderok, :gendermaleok, :genderfemaleok, :gendertransgenderok, :gendernotspecifiedok)
     end
 
+    def sign_up_params
+      params.require(:profile).permit(:firstname, :lastname, :gender, :interests, :email, :password, :bio, :birthdate, :petsok, :genderok, :gendermaleok, :genderfemaleok, :gendertransgenderok, :gendernotspecifiedok)
+    end
 end

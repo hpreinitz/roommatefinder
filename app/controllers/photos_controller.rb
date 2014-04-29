@@ -32,17 +32,16 @@ class PhotosController < ApplicationController
   def destroy
     set_photo
     @photo.destroy
-    redirect_to photos_destroy_path, notice:  "The photo #{@photo.caption} has been deleted."
+    redirect_to photos_path, notice:  "The photo #{@photo.caption} has been deleted."
   end
  
 private
-  def set_photo
-    
+  def set_photo 
     @photo = Photo.find(params[:id])  
-
   end
 
   def photo_params
     params.require(:photo).permit( :caption, :attachment)
-  end  
+  end 
+   
 end

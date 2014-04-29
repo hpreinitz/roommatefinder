@@ -8,10 +8,17 @@ development:
   database: db/development.sqlite3
   pool: 5
   timeout: 5000
+  #adapter: mysql2
+  #encoding: utf8
+  #database: db/development.mysql
+  #username: root
+  #password: root
+  #host: 127.0.0.1
+  #port: 3306
 #development:
  # adapter: postgresql
  # encoding: unicode
-  #database: myapp_development
+ # database: myapp_development
  # pool: 5
  # user:
  # password:
@@ -24,6 +31,14 @@ test:
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
+ # adapter: mysql2
+  #encoding: utf8
+  #database: db/test.mysql
+  #username: root
+  #password: root
+  #host: 127.0.0.1
+  #port: 3306
+
 
 production:
   adapter: sqlite3

@@ -1,13 +1,20 @@
 Roommatefinder::Application.routes.draw do
   
+  get '/tos', :to => redirect('/tos.html')
+  get '/privacy', :to => redirect('privacy.html')
+
   get "photos/show"
   get "photos/index"
   get "photos/new"
   get "photos/create"
   get "photos/destroy"
+  
+  devise_for :profiles
   resources :profiles
   resources :candidates
   resources :photos, only: [:index, :new, :create, :destroy, :show]
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,7 +22,7 @@ Roommatefinder::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get  'welcome/index'
-
+ 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -6,7 +6,7 @@
 <h2>Profile</h2>
 <p>Find me in app/views/profiles/new.html.erb</p>
 
-<%= form_for :profile, url: profiles_path do |f| %>
+<%= form_for(resource, :as => resource_name, :url => session_url) do |f| %>
 
 <% if @profile.errors.any? %>
   <div id="error_explanation">
@@ -148,9 +148,9 @@
 
 <% end %>
 
- <li><%= link_to "Photo", photos_new_path %></li>
-
 </div>
+
+<%= link_to "Profiles", profiles_path %>
 
 <%= render 'layouts/footer' %>
 

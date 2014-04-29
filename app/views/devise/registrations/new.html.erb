@@ -1,19 +1,11 @@
+<%= render 'layouts/devise_hdr' %>
 
-<%= form_for :profile, url: profile_path, method: :patch do |f| %>
+<h2>Sign up</h2>
 
-<% if @profile.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@profile.errors.count, "error") %> prohibited
-      this Profile from being saved:</h2>
-    <ul>
-    <% @profile.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-<div id="tabs">
+ <div id="tabs">
   <ul>
     <li><a href="#tabs-1">Tab 1</a></li>
     <li><a href="#tabs-2">Tab 2</a></li>
@@ -22,6 +14,16 @@
 
   <div id="tabs-1">
     <h2>Content heading 1</h2>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
     <p>
       <%= f.label :firstname, 'First Name' %><br>
       <%= f.text_field :firstname %>
@@ -32,17 +34,6 @@
       <%= f.text_field :lastname %>
     </p>
 
-<% if false %>
-    <p>
-      <%= f.label :email, 'E-mail' %><br>
-      <%= f.email_field :email, autocomplete: "off" %>
-    </p>
-   
-    <p>
-      <%= f.label :password, 'Password' %><br>
-      <%= f.password_field :password, autocomplete: "off" %>
-    </p>
-<% end %>
 
   </div>
 
@@ -132,8 +123,10 @@
    
 </div>  
 
-  <p>
-    <%= f.submit "Update"%>
-  </p>
-
+  <div><%= f.submit "Sign up" %></div>
 <% end %>
+
+
+<%= render "devise/shared/links" %>
+<%= render 'layouts/devise_ftr' %>
+

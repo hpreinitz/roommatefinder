@@ -1,6 +1,6 @@
 
 <%= render 'layouts/header' %>
-<h1>Listing Candidates</h1>
+<h1>Candidates</h1>
 
 <div id="tabs">
   <ul>
@@ -31,13 +31,13 @@
   </thead>
 
   <tbody>
-    <% @profiles.each do |profile| %>
+    <% @candidates.each do |candidate| %>
       <tr>
-        <td><%= profile.firstname %></td>
-        <td><%= profile.lastname %></td>
-        <td><%= profile.email %></td>
-        <td><%= profile.birthdate %></td>
-        <td><%= case profile.gender
+        <td><%= candidate.firstname %></td>
+        <td><%= candidate.lastname %></td>
+        <td><%= candidate.email %></td>
+        <td><%= candidate.birthdate %></td>
+        <td><%= case candidate.gender
                 when 'm'
                   'Male'
                 when 'f'
@@ -53,40 +53,40 @@
                 else
                   'Error'
                 end         %></td>
-        <td><%= profile.bio %></td>
-        <td><%= profile.interests %></td>
-        <td><%= if profile.petsok == "true"
+        <td><%= candidate.bio %></td>
+        <td><%= candidate.interests %></td>
+        <td><%= if candidate.petsok == "true"
                   'Yes'
                 else
                   'No'
                 end
         %></td>
-        <td><%= if profile.gendermaleok == 'true'
+        <td><%= if candidate.gendermaleok == 'true'
                   'Yes'
                 else
                   'No'
                 end
 
          %></td>
-        <td><%= if profile.genderfemaleok == 'true'
+        <td><%= if candidate.genderfemaleok == 'true'
                   'Yes'
                 else
                   'No'
                 end          
          %></td>
-        <td><%= if profile.gendertransgenderok == 'true'
+        <td><%= if candidate.gendertransgenderok == 'true'
                   'Yes'
                 else
                   'No'
                 end          
          %></td>
-        <td><%= if profile.gendernotspecifiedok == 'true'
+        <td><%= if candidate.gendernotspecifiedok == 'true'
                   'Yes'
                 else
                   'No'
                 end          
          %></td>
-        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Show', candidate %></td>
       </tr>
     <% end %>
   </tbody>
@@ -102,5 +102,5 @@
 
 </div>
 <br>
-
+<%= link_to "Candidates", candidates_path %>
 <%= render 'layouts/footer' %>

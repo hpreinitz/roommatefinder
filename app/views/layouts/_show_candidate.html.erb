@@ -1,0 +1,99 @@
+<p>
+  <strong>First Name:</strong>
+  <%= @candidate.firstname %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @candidate.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @candidate.email %>
+</p>
+
+<p>
+  <strong>Birth Date:</strong>
+  <%= @candidate.birthdate %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= case @candidate.gender
+      when 'm'
+        'Male'
+      when 'f'
+        'Female'
+      when 't'
+        'Transgender'
+      when 'n'
+        'Not Specified'
+      when ''
+        'Not Specified'
+      when nil
+        'Not Specified'
+      else
+        'Error'
+      end %>
+</p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @candidate.bio %>
+</p>
+
+<p>
+  <strong>Interests:</strong>
+  <%= @candidate.interests %>
+</p>
+
+<p>
+  <strong>Pets OK?:</strong>
+  <%= if @candidate.petsok == "true"
+        'Yes'
+      else
+        'No'
+      end
+   %>
+</p>
+
+<p>
+  <strong>Male OK?:</strong>
+  <%= if @candidate.gendermaleok == 'true'
+        'Yes'
+      else
+        'No'
+      end
+   %>
+</p>
+
+<p>
+  <strong>Female OK?:</strong>
+  <%= if @candidate.genderfemaleok == 'true'
+        'Yes'
+      else
+        'No'
+      end
+  %>
+</p>
+
+<p>
+  <strong>Transgender OK?:</strong>
+  <%= if @candidate.gendertransgenderok == 'true'
+        'Yes'
+      else
+        'No'
+      end
+  %>
+</p>
+
+<p>
+  <strong>Not Specified OK?:</strong>
+  <%= if @candidate.gendernotspecifiedok == 'true'
+        'Yes'
+      else
+        'No'
+      end
+  %>
+</p>

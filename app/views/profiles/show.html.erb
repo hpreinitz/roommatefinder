@@ -2,8 +2,10 @@
 
 <%= render 'layouts/header' %>
 
-<h1>Show Profile</h1>
+<h1>Show Profile -- <%= @profile.email %></h1>
 
 <%= render 'layouts/show' %>
+
+<%= link_to "Profiles", profiles_path %>
 
 <%= render 'layouts/footer' %>

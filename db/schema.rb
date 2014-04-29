@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418145435) do
+ActiveRecord::Schema.define(version: 20140422002036) do
 
   create_table "photos", force: true do |t|
     t.string   "caption"
@@ -21,22 +21,33 @@ ActiveRecord::Schema.define(version: 20140418145435) do
   end
 
   create_table "profiles", force: true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "email"
-    t.string   "password"
-    t.date     "birthdate"
-    t.string   "gender"
-    t.text     "bio"
-    t.text     "interests"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "password"
+    t.string   "birthdate"
+    t.string   "gender"
+    t.string   "bio"
+    t.string   "interests"
     t.string   "petsok"
-    t.string   "genderok"
     t.string   "gendermaleok"
     t.string   "genderfemaleok"
     t.string   "gendertransgenderok"
     t.string   "gendernotspecifiedok"
   end
+
+  add_index "profiles", ["email"], name: "index_profiles_on_email", unique: true
+  add_index "profiles", ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true
 
 end
