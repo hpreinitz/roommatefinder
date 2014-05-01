@@ -97,3 +97,12 @@
       end
   %>
 </p>
+
+
+
+<% if false %>
+<% profile = @profile.select('* from profiles' )%>
+    <% profile_photo = @profile.joins('left outer join photos on photos.profile_id = profiles.id' )%>
+
+<%= image_tag profile_photo.attachment_url, :alt => "Profile Image", :width => 150, :height => 150%>
+<% end %>

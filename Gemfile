@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'acts-as-taggable-on'
 #gem 'mysql2'
 
 #gem 'rmagick'

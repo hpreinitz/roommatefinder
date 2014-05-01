@@ -16,6 +16,7 @@ class PhotosController < ApplicationController
  
   def create
     @photo = Photo.new(photo_params)
+   # @photo.profile = current_user
  
     respond_to do |format|
       if @photo.save

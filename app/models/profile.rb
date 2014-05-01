@@ -6,5 +6,7 @@ class Profile < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   #has_many :photos, dependent: :destroy
+  acts_as_taggable
+  #acts_as_taggable_on :interests
 end
 

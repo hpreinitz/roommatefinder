@@ -1,7 +1,9 @@
 Roommatefinder::Application.routes.draw do
   
-  get '/tos', :to => redirect('/tos.html')
-  get '/privacy', :to => redirect('privacy.html')
+  #get 'interests/:interest' , to: 'profiles#index', as: :interest
+  get 'tags/:tag' , to: 'profiles#index', as: :tag
+  get 'tos', :to => redirect('tos.html')
+  get 'privacy', :to => redirect('privacy.html')
 
   get "photos/show"
   get "photos/index"

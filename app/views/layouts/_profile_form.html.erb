@@ -48,8 +48,14 @@
 
   <div id="tabs-2">
     <h2>Content heading 2</h2>
+    
+<% if false %>
+    <% profile_photo = @profile.joins('left outer join photos on photos.profile_id = profiles.id' )%>
 
-    <img src="smiley.gif" alt="Smiley face" height="42" width="42">
+<%= image_tag profile_photo.attachment_url, :alt => "Profile Image", :width => 150, :height => 150%>
+<%end%>
+
+    <img src="smiley.gif" alt="Smiley face" height="50" width="50">
 
     <p>
       <%= f.label :birthdate, 'Birth Date' %><br>
@@ -81,10 +87,22 @@
       <%= f.text_field :bio %>
     </p>
 
+<% if false %>
+
+    <p>
+      <%= f.label :interest_list, 'Interests' %><br>
+      <%= f.input :interest_list %>
+    </p>
+<%end%>
+
+
+<% if true %>
+
     <p>
       <%= f.label :interests, 'Interests' %><br>
       <%= f.text_field :interests %>
     </p>
+<%end%>
 
   </div>
 

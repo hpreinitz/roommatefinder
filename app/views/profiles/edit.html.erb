@@ -7,7 +7,41 @@
 <p>Find me in app/views/profiles/edit.html.erb</p>
 
 <%= render 'layouts/profile_form' %>
-<%= link_to "Cancel", edit_profile_path, class: "btn btn-primary" %>
+
+<%= link_to "Cancel", edit_profile_path, class: "btn btn-primary" %></br>
+
+<% if false %>
+<p>Interests</p>
+<%= @profile.interests%></br>
+
+<p>Add Tags</p>
+<%= @profile.interest_list.add(@profile.interests, parse: true)%></br>
+
+<p>Tags</p>
+<%= @profile.interest_list%></br>
+
+<p>Save and reload Tags</p>
+<%= @profile.save%>
+<%= @profile.reload%>
+<%= @profile.interest_list%></br>
+<%end%>
+
+<% if false %>
+<p>Interests</p>
+<%= @profile.interests%></br>
+
+<p>Add Tags</p>
+<%= @profile.tag_list.add(@profile.interests, parse: true)%></br>
+
+<p>Tags</p>
+<%= @profile.tag_list%></br>
+
+<p>Save and reload Tags</p>
+<%= @profile.save%>
+<%= @profile.reload%>
+<%= @profile.tag_list%></br>
+<%end%>
+
 <p>Date: <input type="text" id="datepicker"></p>
 
 <div class="ui-widget">
